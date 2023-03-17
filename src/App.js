@@ -22,8 +22,11 @@ import Profile from './components/profile/Profile';
 import Profiles from './components/profiles/Profiles';
 import Post from './components/post/Post';
 import Posts from './components/posts/Posts';
+import axios from 'axios';
 
 const App = () => {
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+  
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
